@@ -1,5 +1,14 @@
+$background: #f6f7f9;
+$primary: #c13c5f;
+
+$shadow: 0px 0px 5px rgba(0, 0, 0, .15);
+
+* {
+  outline: none !important;
+}
+
 html, body, #root {
-  background: #f5f5f5 !important;
+  background: $background !important;
   height: 100%;
   width: 100%;
 }
@@ -34,16 +43,97 @@ h1 {
   display: block; /* For Firefox */
 }
 
-input[type="text"].topic-input {
+input[type="text"].neon-input-default,
+input[type="password"].neon-input-default {
   outline: none !important;
   width: 100%;
   -webkit-appearance: none;
   background: transparent;
-  font-size: 3em;
-  font-weight: 700;
+  color: rgba(50, 50, 50, 1);
+  font-size: 1em;
+  font-weight: 500;
+  border: 1px solid rgba(0, 0, 0, .45);
+  border-radius: 4px;
+  padding: .5em .5em;
+  &:focus {
+    border: 1px solid #54bce0;
+  }
+}
+
+input[type="text"].neon-input-default::placeholder,
+input[type="password"].neon-input-default::placeholder {
+  width: 100%;
+  -webkit-appearance: none;
+  color: rgba(100, 100, 100, 1);
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, .15);
+  font-size: 1em;
+  font-weight: 300;
   border: 0;
 }
 
-.kontent-img {
-  max-width: 100%;
+.neon-btn {
+  -webkit-appearance: none;
+  border: 0;
+  border-radius: 4px;
+  padding: .75em 1em;
+  box-shadow: $shadow;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &.neon-btn-block {
+    width: 100%;
+  }
+  &.neon-btn-primary {
+    color: #fff;
+    background: -webkit-linear-gradient(left,#38bbb1,#48bbe5);
+  }
+  &.neon-btn-default {
+    color: #fff;
+    background: -webkit-linear-gradient(left,#38bbb1,#48bbe5);
+  }
+}
+
+.login-box {
+  transition: all 1s ease;
+  padding: 3em 0em;
+  max-height: 0%;
+  opacity: 0;
+  &.show {
+    max-height: 100%;
+    opacity: 1;
+  }
+  #login-logo {
+    width: 60%;
+    margin-top: 1em;
+    margin-bottom: 4em;
+  }
+  .login-form {
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 2;
+  }
+  .login-button {
+    -webkit-appearance: none;
+    border: none;
+    border-radius: 40px;
+    padding: .5em;
+    width: 100%;
+    color: $primary;
+    background: #fff;
+    margin-top: 7em;
+    margin-bottom: 1em;
+  }
+  .neon-glass {
+    background: -webkit-linear-gradient(#57343b, #405870);
+    opacity: .35;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+  }
 }

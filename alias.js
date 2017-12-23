@@ -6,6 +6,7 @@ module.exports = {
       $actions: path.resolve(__dirname, 'src/actions'),
       $containers: path.resolve(__dirname, 'src/containers'),
       $components: path.resolve(__dirname, 'src/components'),
+      $dummy: path.resolve(__dirname, 'src/dummy'),
       $libs: path.resolve(__dirname, 'src/libs'),
       $pages: path.resolve(__dirname, 'src/pages'),
       $reducers: path.resolve(__dirname, 'src/reducers'),

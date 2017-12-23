@@ -15,7 +15,7 @@ const WatchMissingNodeModulesPlugin = require('react-dev-utils/WatchMissingNodeM
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
 const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
-process.env.NODE_PATH = (process.env.NODE_PATH || '')
+process.env.NODE_PATH = (process.env.NODE_PATH || '');
 
 const paths = require('./path')
 
@@ -207,6 +207,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: paths.appHtml,
+    }),
+    new webpack.ProvidePlugin({
+      $: 'zepto',
     }),
     // Add module names to factory functions so they appear in browser profiler.
     new webpack.NamedModulesPlugin(),

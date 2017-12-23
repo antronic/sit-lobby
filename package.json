@@ -7,13 +7,18 @@
   "author": "Jirachai Chansivanon <antronic.inc@gmail.com>",
   "license": "private",
   "private": true,
+  "scripts": {
+    "dev": "node scripts/dev"
+  },
   "dependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.0.1",
+    "babel-plugin-emotion": "^8.0.12",
     "babel-preset-react": "^6.24.1",
     "bootstrap": "4.0.0-beta",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "emotion": "^8.0.12",
     "eslint-config-airbnb-base": "^12.0.2",
     "eslint-config-react": "^1.1.7",
     "eslint-plugin-import": "^2.7.0",
@@ -25,12 +30,12 @@
     "react": "^16.0.0",
     "react-dev-utils": "^4.1.0",
     "react-dom": "^16.0.0",
+    "react-emotion": "^8.0.12",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.25.1",
     "redux": "^3.7.2",
     "shelljs": "^0.7.8",
-    "styled-components": "^2.2.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "zepto": "^1.2.0"
@@ -54,6 +59,9 @@
   "babel": {
     "presets": [
       "react"
+    ],
+    "plugins": [
+      "emotion"
     ]
   },
   "eslintConfig": {
@@ -84,6 +92,7 @@
           "SwitchCase": 1
         }
       ],
+      "global-require": 0,
       "class-methods-use-this": 0,
       "no-param-reassign": 0,
       "no-unused-vars": 1,
